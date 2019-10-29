@@ -1,0 +1,38 @@
+html, body { width: 1072px; height: 1268px; overflow: hidden; font-family: 'Roboto', serif; font-size: 24px; position: relative; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+hr { clear: both; border: 1px #ccc solid; }
+
+#date { font-size: 200%; float: right; margin-right: 0.5em; text-align: right; }
+#time { font-size: 450%; }
+
+#weather td { vertical-align: middle; }
+#weather #temp { font-size: 400%; white-space: nowrap; padding-right: 2rem; }
+#weather #summary { font-size: 200%;}
+#forecast { overflow: auto; scrollbar-width: none; }
+#forecast::-webkit-scrollbar { 
+    display: none;
+}
+#forecast table { width: 200%; border-spacing: 0.5rem 0; margin: 0.5rem 0; }
+#forecast table td { width: 8.33%; max-width: 0; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#forecast table .temperatures td { font-size: 175%; font-weight: bold; padding: 0.5rem 0; }
+#forecast table .summaries td { font-size: 85%; font-weight: lighter; }
+
+#departures { width: 100%; border-spacing: 0; }
+#departures table caption { font-weight: bold; font-size: 150%; padding-bottom: 0.5rem; }
+#departures td { vertical-align: top; }
+#departures #busses { width: 50%; padding-right: 1%; border-right: 1px #ccc solid; }
+#departures #trains { width: 50%; padding-left: 1%; border-left: 1px #ccc solid; }
+#departures tr.odd { background: #ccc; }
+#departures .line { text-align: left; white-space: nowrap; font-size: 166%; }
+#departures .direction { text-align: left; width: 100%; white-space: nowrap; }
+#departures .time { text-align: right; font-size: 166%; }
+#departures .time .delay { font-size: 75%; font-weight: bolder; display: block; text-align: center; background: #000; color: #fff; padding: 0 0.5em; }
+#departures table { width: 100%; margin-bottom: 0.5em; }
+#departures table td { vertical-align: middle; padding: 0 0.1em; }
+
+#rooms { position: absolute; bottom: 0; }
+#rooms .room { white-space: nowrap; display: block; float: left; width: 31.33%; font-size: 150%; }
+button.room { background: #ccc; padding: 1.5%; margin: 1%; font-weight: bold; }
+button.room[data-state=true] { background: #666; color: #fff; }
+
+#tz { color: #fff; background: #000; white-space: pre }

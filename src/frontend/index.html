@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>screendle</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="/js/screendle.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {            
+            var screendle = new Screendle();
+            screendle.blackout.start(document.querySelector('body'));
+            screendle.clockOffset.start();
+            screendle.clock.start(
+                document.querySelector('#clock'),
+                ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'],
+                ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
+            );
+            screendle.weather.start(document.querySelector('#weather'));
+            screendle.publicTransport.start(document.querySelector('#public-transport'), 'Wiesnerring', 'Bf Bergedorf');
+            screendle.rooms.start(document.querySelector('#rooms'));
+        });
+    </script>
+</head>
+<body>
+
+    <div id="clock"></div>
+
+    <hr>
+
+    <div id="weather"></div>
+
+    <hr>
+
+    <div id="public-transport"></div>
+
+    <hr>
+
+    <div id="rooms"></div>
+
+</body>
+</html>
