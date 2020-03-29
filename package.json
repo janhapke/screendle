@@ -14,11 +14,11 @@
     "express": "^4.13.3",
     "luxon": "^1.4.4",
     "request": "^2.88.0",
-    "request-promise-native": "^1.0.7"
+    "request-promise-native": "^1.0.8"
   },
   "devDependencies": {
-    "jest": "^24.5.0",
+    "jest": "^25.2.3",
     "jest-express": "^1.10.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^2.0.2"
   }
 }
