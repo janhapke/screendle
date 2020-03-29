@@ -54,33 +54,33 @@ Node and npm can be run in docker.
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:9.8-alpine npm install
+docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:12-alpine npm install
 ```
 PowerShell:
 ```
-docker run --rm -it -w /app -v ${PWD}:/app -p 8888:80 node:9.8-alpine npm install
+docker run --rm -it -w /app -v ${PWD}:/app -p 8888:80 node:12-alpine npm install
 ```
 
 #### Unit Tests
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app node:9.8-alpine npm run-script test
+docker run --rm -it -w /app -v $(PWD):/app node:12-alpine npm run-script test
 ```
 PowerShell:
 ```
-docker run --rm -it -w /app -v ${PWD}:/app node:9.8-alpine npm run-script test
+docker run --rm -it -w /app -v ${PWD}:/app node:12-alpine npm run-script test
 ```
 
 #### Run a development server via [nodemon](https://nodemon.io)
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:9.8-alpine npx nodemon server
+docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:12-alpine npx nodemon server
 ```
 PowerShell:
 ```
-docker run --rm -it -w /app -v ${PWD}:/app -p 8888:80 node:9.8-alpine npx nodemon --legacy-watch server
+docker run --rm -it -w /app -v ${PWD}:/app -p 8888:80 node:12-alpine npx nodemon --legacy-watch server
 ```
 
 ### Docker (production)
