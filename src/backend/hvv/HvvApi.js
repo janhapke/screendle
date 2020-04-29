@@ -61,7 +61,7 @@ class HvvApi {
                 direction: departure.line.direction,
                 time: startDate.plus({minute: departure.timeOffset}).toFormat('HH:mm'),
                 hasDelay: !!(departure.delay),
-                delay: departure.delay ? '(+' + departure.delay + ')' : '',
+                delay: departure.delay ? '(+' + Math.round(departure.delay / 60) + ')' : '',
             };
         });
 
