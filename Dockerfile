@@ -7,7 +7,7 @@ RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 
 COPY . /usr/src/app
-RUN npm install --only=production
+RUN npm ci --only=production
 
 EXPOSE 80
 CMD [ "npm", "start" ]
