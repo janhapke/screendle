@@ -54,8 +54,8 @@ class HvvApi {
     }
 
     formatDepartureList(departureList) {
-        const startDate = DateTime.fromFormat(departureList.time.date + ' ' + departureList.time.time, 'dd.LL.yyyy HH:mm');
-        const departures = departureList.departures.map(departure => {
+        const startDate = departureList.time ? DateTime.fromFormat(departureList.time.date + ' ' + departureList.time.time, 'dd.LL.yyyy HH:mm') : DateTime.local();
+        const departures = (Array.isArray(departureList.departures) ? departureList.departures : []).map(departure => {
             return {
                 line: departure.line.name,
                 direction: departure.line.direction,

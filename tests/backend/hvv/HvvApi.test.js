@@ -224,6 +224,21 @@ describe('backend/hvv/HvvApi', () => {
             expect(result.data.attributes.departures[1].time).toEqual('14:35');
         });
 
+        describe('invalid input', () => {
+            
+            beforeEach(() => {
+                hvvApi = new HvvApi(hvvConfig.MONITOR_ID);
+                result = hvvApi.formatDepartureList('departureList');
+            });
+
+            test('returns the correct structure', () => {
+                expect(result.data).toBeDefined();
+                expect(result.data.attributes).toBeDefined();
+                expect(result.data.attributes.departures).toBeDefined();
+                expect(Array.isArray(result.data.attributes.departures)).toEqual(true);
+            });
+        });
+
     });
 
 });
