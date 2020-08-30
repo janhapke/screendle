@@ -54,7 +54,7 @@ Node and npm can be run in docker.
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:12-alpine npm install
+docker run --rm -it -w /app -v $(pwd):/app -p 8888:80 node:12-alpine npm install
 ```
 PowerShell:
 ```
@@ -65,7 +65,7 @@ docker run --rm -it -w /app -v ${PWD}:/app -p 8888:80 node:12-alpine npm install
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app node:12-alpine npm run-script test
+docker run --rm -it -w /app -v $(pwd):/app node:12-alpine npm run-script test
 ```
 PowerShell:
 ```
@@ -76,7 +76,7 @@ docker run --rm -it -w /app -v ${PWD}:/app node:12-alpine npm run-script test
 
 bash:
 ```
-docker run --rm -it -w /app -v $(PWD):/app -p 8888:80 node:12-alpine npx nodemon server
+docker run --rm -it -w /app -v $(pwd):/app -p 8888:80 node:12-alpine npx nodemon server
 ```
 PowerShell:
 ```
