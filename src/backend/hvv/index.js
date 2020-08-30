@@ -2,10 +2,13 @@ const HvvApi = require('./HvvApi');
 
 module.exports = cfg => {
 
-    const monitorUrlMatches = cfg.MONITOR_URL.match(new RegExp('^https?://abfahrten\.hvv\.de/(?:vorschau/)?([a-f0-9-]+)/?$'));
+    let monitorUrlMatches = cfg.MONITOR_URL.match(new RegExp('^https?://abfahrten\.hvv\.de/(?:vorschau/)?([a-f0-9-]+)/?$'));
 
     if (!monitorUrlMatches || monitorUrlMatches.length !== 2) {
-        throw new Error('Invalid MONITOR_URL in configuration!')
+        monitorUrlMatches = cfg.MONITOR_URL.match(new RegExp('^https?://www\.hvv\.de/de/fahrplaene/abruf-fahrplaninfos/abfahrten-auf-ihrem-monitor/abfahrten-anzeige\\?show=([a-f0-9-]+)$'));
+        if (!monitorUrlMatches || monitorUrlMatches.length !== 2) {
+            throw new Error('Invalid MONITOR_URL in configuration!')
+        }
     }
 
     const config = {

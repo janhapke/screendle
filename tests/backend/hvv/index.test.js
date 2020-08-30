@@ -115,6 +115,14 @@ describe('backend/hvv', () => {
         expect(() => hvv({MONITOR_URL: 'http://example.com/'})).toThrow();
     });
 
+    test('accepts old MONITOR_URL format', () => {
+        expect(() => hvv({MONITOR_URL: 'https://abfahrten.hvv.de/1-2-3-4-5'})).not.toThrow();
+    });
+
+    test('accepts new MONITOR_URL format', () => {
+        expect(() => hvv({MONITOR_URL: 'https://www.hvv.de/de/fahrplaene/abruf-fahrplaninfos/abfahrten-auf-ihrem-monitor/abfahrten-anzeige?show=12345'})).not.toThrow();
+    });
+
     test('calls getMonitorConfig', () => {
         const routeHandler = hvv(hvvConfig);
         routeHandler(null, response);
