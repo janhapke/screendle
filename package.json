@@ -7,7 +7,7 @@
   "main": "src/server.js",
   "scripts": {
     "start": "node src/server.js",
-    "test": "jest"
+    "test": "npx jest"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
